@@ -1,0 +1,28 @@
+.post {
+  background: var(--bg-post);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-0.3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: var(--font-h3-size);
+  line-height: var(--line-h3-height);
+  color: var(--text-color-primary);
+  margin-bottom: 8px;
+}
+
+.text {
+  color: var(--text-color-secondary);
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+}
