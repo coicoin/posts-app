@@ -1,0 +1,21 @@
+:root {
+  --font-size-default: 10px;
+
+  --font-size: 1.6rem;
+  --line-height: 2.4rem;
+
+  --font-h1-size: 3.2rem;
+  --line-h1-height: 4.8rem;
+
+  --font-h2-size: 2.4rem;
+  --line-h2-height: 3.5rem;
+
+  --font-h3-size: 1.9rem;
+  --line-h3-height: 2.4rem;
+
+  --text-primary: #1f2937;
+  --text-color-secondary: #5d636f;
+  --border-light: #e5e7eb;
+  --bg-page: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  --bg-post: #ffffff;
+}

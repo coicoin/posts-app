@@ -1,0 +1,12 @@
+.footer {
+  padding: 16px;
+  display: flex;
+  max-height: 60px;
+  justify-content: center;
+  background: #ffffff;
+  color: var(--text-color-primary);
+}
+
+.copyRight {
+  font-size: var(--font-size-default);
+}
