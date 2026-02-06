@@ -13,9 +13,21 @@
   --font-h3-size: 1.9rem;
   --line-h3-height: 2.4rem;
 
-  --text-primary: #1f2937;
+  /* Light theme */
+  --text-color-primary: #1f2937;
+  --text-color-hover-primary: rgba(74, 74, 74, 0.9);
   --text-color-secondary: #5d636f;
   --border-light: #e5e7eb;
-  --bg-page: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
-  --bg-post: #ffffff;
+  --bg-color-primary: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  --bg-color-secondary: #ffffff;
+
+  /* Dark theme */
+  [data-theme="dark"] {
+    --text-color-primary: #f9fafb;
+    --text-color-hover-primary: rgba(232, 232, 232, 0.9);
+    --text-color-secondary: #acb1ba;
+    --border-light: #374151;
+    --bg-color-primary: linear-gradient(180deg, #111827 0%, #020617 100%);
+    --bg-color-secondary: #020617;
+  }
 }

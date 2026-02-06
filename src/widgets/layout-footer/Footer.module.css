@@ -3,7 +3,7 @@
   display: flex;
   max-height: 60px;
   justify-content: center;
-  background: #ffffff;
+  background: var(--bg-color-secondary);
   color: var(--text-color-primary);
 }
 
