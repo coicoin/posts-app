@@ -1,0 +1,45 @@
+.about {
+  width: 40vw;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  position: fixed;
+  background: var(--bg-color-secondary);
+  color: var(--text-color-primary);
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: 0.5px solid var(--border-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: var(--font-h3-size);
+  color: var(--text-color-primary);
+}
+
+.description {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--text-color-secondary);
+}
+
+.closeButton {
+  padding: 4px 16px;
+  max-width: 80px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  flex-basis: 1;
+  align-self: end;
+  outline: none;
+  color: var(--text-color-primary);
+}
+
+.closeButton:hover {
+  color: var(--text-color-hover-primary);
+}

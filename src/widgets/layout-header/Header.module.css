@@ -1,12 +1,46 @@
 .header {
-  padding: 16px;
+  padding: 16px 16px 16px 120px;
   text-align: center;
-  max-height: 60px;
-  background: #ffffff;
+  max-height: 90px;
+  background: var(--bg-color-secondary);
   color: var(--text-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 430px) {
+  .header {
+    padding-left: 20px;
+    justify-content: space-evenly;
+  }
 }
 
 .title {
   font-size: var(--font-h2-size);
   line-height: var(--line-h2-height);
+  flex: 1;
+}
+
+@media screen and (max-width: 430px) {
+  .title {
+    font-size: var(--font-h3-size);
+    flex: 0;
+  }
+}
+
+.aboutButton {
+  max-width: 60px;
+  margin: 0 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color-primary);
+  outline: none;
+}
+
+.aboutButton:hover {
+  color: var(--text-color-hover-primary);
 }

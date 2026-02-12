@@ -1,5 +1,5 @@
-import type { Post } from "../../entities/post/model/types";
-import { PostCard } from "../../entities/post/ui/PostCard";
+import type { Post } from "@/entities/post/model/types";
+import { PostCard } from "@/entities/post/ui/PostCard";
 import styles from "./PostList.module.css";
 
 type PostCardListProps = {

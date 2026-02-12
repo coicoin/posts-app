@@ -1,6 +1,6 @@
 .postCardList {
   padding: 24px 16px;
-  max-width: clamp(400px, 60vw, 800px);
+  max-width: clamp(400px, 60vw, 720px);
   display: flex;
   flex-direction: column;
   gap: 16px;

@@ -1,5 +1,5 @@
 .post {
-  background: var(--bg-post);
+  background: var(--bg-color-secondary);
   padding: 20px;
   border-radius: 12px;
   border: 1px solid var(--border-light);
@@ -17,6 +17,7 @@
 .title {
   font-size: var(--font-h3-size);
   line-height: var(--line-h3-height);
+  font-weight: 550;
   color: var(--text-color-primary);
   margin-bottom: 8px;
 }
