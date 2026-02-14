@@ -1,0 +1,45 @@
+.comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+}
+
+.commentContent {
+  position: relative;
+  background: var(--bg-color-primary);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
+}
+
+.email {
+  color: var(--text-color-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--font-height);
+  font-style: italic;
+  padding: 0 0 10px 0;
+}
+
+.email a {
+  text-decoration: none;
+}
+
+.email a:hover {
+  text-decoration: underline;
+}
+
+.body {
+  color: var(--text-color-primary);
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+}

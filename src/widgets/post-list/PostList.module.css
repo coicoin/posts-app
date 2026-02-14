@@ -1,4 +1,4 @@
-.postCardList {
+.postList {
   padding: 24px 16px;
   max-width: clamp(400px, 60vw, 720px);
   display: flex;
@@ -6,4 +6,18 @@
   gap: 16px;
   margin: 0 auto;
   border-radius: 8px;
+  min-height: 70vh;
+}
+
+.lengthFilterWrapper {
+  padding: 5px;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lengthFilterTitle {
+  font-size: var(--font-size-base);
+  color: var(--text-color-primary);
 }

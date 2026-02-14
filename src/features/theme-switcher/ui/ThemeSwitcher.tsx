@@ -4,7 +4,8 @@ import { MoonIcon } from "@heroicons/react/24/solid";
 import useTheme from "@/shared/lib/theme/useTheme";
 import Button from "@/shared/ui/button/Button";
 import { themeKey, themes } from "@/shared/constants/constants";
-import { messages } from "@/shared/messages/messages";
+import { lexicon } from "@/shared/lexicon/lexicon";
+import { toggleTheme } from "@/shared/lib/theme/handleTheme";
 
 function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -12,17 +13,17 @@ function ThemeSwitcher() {
     <Button
       className={styles.themeButton}
       onClick={() => {
-        const toggledTheme = theme === themes.light ? themes.dark : themes.light;
+        const toggledTheme = toggleTheme(theme);
         setTheme(toggledTheme);
         localStorage.setItem(themeKey, toggledTheme);
       }}
-      aria-label={messages.buttons.toggleTheme}
+      aria-label={lexicon.buttons.toggleTheme}
     >
-      {theme === themes.dark ? (
-        <MoonIcon className={styles.ico} />
-      ) : (
-        <SunIcon className={styles.ico} />
-      )}
+      {
+        theme === themes.dark 
+          ? (<MoonIcon className={styles.ico} />) 
+          : (<SunIcon className={styles.ico} />)
+      }
     </Button>
   );
 }

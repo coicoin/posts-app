@@ -1,8 +1,9 @@
-export const messages = {
+export const lexicon = {
   buttons: {
     toggleTheme: "Toggle theme",
     close: "Закрыть",
     about: "О проекте",
+    x: "X",
   },
   titles: {
     appName: "Posts App",

@@ -2,16 +2,17 @@ import type { Theme } from "@/shared/types/types";
 import ThemeContext from "./ThemeContext";
 import { useState, type ReactNode } from "react";
 import { themeKey, themes } from "@/shared/constants/constants";
+import { applyTheme } from "./handleTheme";
 
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
 function ThemeProvider({ children }: ThemeProviderProps) {
-  const value = localStorage.getItem(themeKey) ?? themes.light;
+  const currentTheme = localStorage.getItem(themeKey) ?? themes.light;
 
   const [theme, setTheme] = useState<Theme>(
-    value === themes.dark ? themes.dark : themes.light,
+    applyTheme(currentTheme)
   );
 
   return (
