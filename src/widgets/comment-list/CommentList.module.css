@@ -1,0 +1,43 @@
+.showComments {
+  min-height: 45px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-top: 1px solid var(--border-light);
+  font-size: var(--font-size-base);
+  color: var(--text-color-primary);
+  padding: 12px 20px;
+  user-select: none;
+  background: var(--bg-color-secondary);
+}
+
+.commentsCount {
+  padding-right: 8px;
+}
+
+.commentsArrow {
+  font-size: var(--font-size);
+}
+
+.showComments .commentsArrow.open {
+  transform: rotate(90deg);
+}
+
+.commentList {
+  padding: 0 20px 20px;
+  max-width: clamp(400px, 60vw, 720px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.loadingWrapper {
+  height: 10vh;
+}
+
+.loading {
+  width: 10px;
+  height: 10px;
+}

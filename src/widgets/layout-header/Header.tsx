@@ -1,10 +1,9 @@
 import ThemeSwitcher from "@/features/theme-switcher/ui/ThemeSwitcher";
 import styles from "./Header.module.css";
-import Modal from "@/shared/ui/modal/Modal";
 import About from "@/widgets/about/About";
 import Button from "@/shared/ui/button/Button";
-import { useState } from "react";
 import { lexicon } from "@/shared/lexicon/lexicon";
+import { useState } from "react";
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
@@ -15,9 +14,7 @@ function Header() {
       <Button className={styles.aboutButton} onClick={() => setShowModal(true)}>
         {lexicon.buttons.about}
       </Button>
-      <Modal isOpen={showModal}>
-        <About onClose={() => setShowModal(false)} />
-      </Modal>
+      <About isOpen={showModal} onClose={() => setShowModal(false)} />
       <ThemeSwitcher />
     </header>
   );

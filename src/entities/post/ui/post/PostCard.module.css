@@ -1,17 +1,22 @@
 .post {
   background: var(--bg-color-secondary);
-  padding: 20px;
+  padding: 0;
   border-radius: 12px;
   border: 1px solid var(--border-light);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   transition:
     transform 0.1s ease,
     box-shadow 0.2s ease;
+  overflow: hidden;
 }
 
 .post:hover {
   transform: translateY(-0.3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.postContent {
+  padding: 20px;
 }
 
 .title {

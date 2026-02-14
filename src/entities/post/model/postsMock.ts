@@ -1,6 +1,6 @@
-import type { Post } from "./types";
+import type { TPost } from "./types";
 
-export const postsMock: Post[] = [
+export const postsMock: TPost[] = [
   {
     body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
     id: 1,

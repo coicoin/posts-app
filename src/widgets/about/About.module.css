@@ -1,21 +1,3 @@
-.about {
-  width: 40vw;
-  height: 200px;
-  left: 50%;
-  top: 50%;
-  position: fixed;
-  background: var(--bg-color-secondary);
-  color: var(--text-color-primary);
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  border: 0.5px solid var(--border-light);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .title {
   font-size: var(--font-h3-size);
   color: var(--text-color-primary);
@@ -33,30 +15,12 @@
   border-radius: 8px;
   cursor: pointer;
   background: none;
-  border: none;
+  border: var(--border-light);
   flex-basis: 1;
-  align-self: end;
   outline: none;
   color: var(--text-color-primary);
 }
 
 .closeButton:hover {
   color: var(--text-color-hover-primary);
-}
-
-.xButton {
-  border-radius: 2px;
-  padding: 0 3.2px;
-  position: absolute;
-  cursor: pointer;
-  right: 10px;
-  top: 10px;
-  background-color: rgb(255, 60, 0);
-  border: 0.4px solid rgba(203, 84, 0, 0.8);
-  color: white;
-  box-shadow: 0 0 1px 0.1px  rgba(203, 84, 0, 0.8);
-}
-
-.xButton:hover {
-  background-color: rgba(255, 60, 0, 0.9);
 }
