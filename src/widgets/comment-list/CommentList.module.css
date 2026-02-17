@@ -1,4 +1,4 @@
-.showComments {
+.commentsButton {
   min-height: 45px;
   display: flex;
   justify-content: space-between;
@@ -9,6 +9,10 @@
   padding: 12px 20px;
   user-select: none;
   background: var(--bg-color-secondary);
+}
+
+.commentsButton:hover {
+  opacity: 0.7;
 }
 
 .commentsCount {
