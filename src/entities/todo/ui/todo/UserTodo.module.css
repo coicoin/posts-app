@@ -1,0 +1,12 @@
+.todo {
+  border: 1px solid var(--border-light);
+}
+
+.title {
+  padding: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.completed {
+  color: green;
+}

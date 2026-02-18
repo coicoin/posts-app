@@ -1,12 +1,12 @@
-import type { TComment } from "@/entities/post/model/types";
 import styles from "./CommentList.module.css";
 import React, { useCallback, useEffect, useState } from "react";
 import withLoading, {
   type WithLoadingProps,
 } from "@/shared/lib/hoc/withLoading";
 import Loader from "@/shared/ui/loader/Loader";
-import { Comment } from "@/entities/post/ui/comment/Comment";
-import { commentsMock } from "@/entities/post/model/commentsMock";
+import { Comment } from "@/entities/comments/ui/comment/Comment";
+import { commentsMock } from "@/entities/comments/model/commentsMock";
+import type { TComment } from "@/entities/comments/model/types";
 
 type CommentListProps = {
   postId: number;
@@ -52,13 +52,17 @@ function CommentList({
 
   return (
     <React.Fragment>
-      <div className={styles.showComments} onClick={handleClick}>
+      <div className={styles.commentsButton} onClick={handleClick}>
         <p className={styles.commentsTitle}>
           <span className={styles.commentsCount}>{commentsCount}</span>
           Comments
         </p>
         <span
-          className={`${styles.commentsArrow} ${isOpen ? styles.open : ""}`}
+          className={
+            isOpen
+              ? `${styles.commentsArrow} ${styles.open}`
+              : `${styles.commentsArrow}`
+          }
         >
           {loading ? <Loader size={20} /> : ">"}
         </span>

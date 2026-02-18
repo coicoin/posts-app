@@ -1,0 +1,12 @@
+.photoContent {
+  padding: 10px;
+}
+
+.title {
+  padding: 8px;
+}
+
+.picture {
+  color: green;
+  max-width: 50vw;
+}

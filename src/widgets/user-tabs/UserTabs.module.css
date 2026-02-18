@@ -1,0 +1,24 @@
+.nav {
+  border-bottom: solid 1px var(--border-light);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+  user-select: none;
+}
+
+.nav a {
+  color: var(--text-color-primary);
+  font-size: var(--font-size-small);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--text-color-hover-primary);
+  text-decoration: underline;
+}
+
+.nav a.active {
+  color: var(--text-color-hover-primary);
+  font-weight: 600;
+}

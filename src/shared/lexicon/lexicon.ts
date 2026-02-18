@@ -3,6 +3,11 @@ export const lexicon = {
     toggleTheme: "Toggle theme",
     close: "Закрыть",
     about: "О проекте",
+    posts: "Посты",
+    users: "Пользователи",
+    tasks: "Задачи",
+    photos: "Фото",
+    albums: "Альбомы",
     x: "X",
   },
   titles: {

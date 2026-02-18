@@ -1,4 +1,4 @@
-import type { TComment } from "@/entities/post/model/types";
+import type { TComment } from "@/entities/comments/model/types";
 import styles from "./Comment.module.css";
 
 type CommentProps = {
