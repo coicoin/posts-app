@@ -1,10 +1,10 @@
 import styles from "./UserList.module.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { TUser } from "@/entities/user/model/types";
-import { User } from "@/entities/user/ui/user/User";
 import { usersMock } from "@/entities/user/model/usersMock";
+import { NavLink } from "react-router";
 
-function UserList() {
+export function UserList() {
   const [users, setUsers] = useState<TUser[]>([]);
 
   useEffect(() => {
@@ -19,12 +19,23 @@ function UserList() {
   return (
     <div className={styles.users}>
       {users.map((user: TUser) => (
-        <React.Fragment key={user.id}>
-          <User user={user} />
-        </React.Fragment>
+        <NavLink
+          key={user.id}
+          to={`/users/${user.id}`}
+          className={
+            ({ isActive }) => (
+              isActive 
+                ? `${styles.active} ${styles.link}`
+                : styles.link
+              )}
+          end={false}
+        >
+          <div className={styles.user} key={user.id}>
+            <img src="/icons/avatar.png" className={styles.avatar} />
+            <p className={styles.name}>{user.name}</p>
+          </div>
+        </NavLink>
       ))}
     </div>
   );
 }
-
-export { UserList };

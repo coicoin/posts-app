@@ -1,12 +1,10 @@
 .user {
   display: flex;
-  align-items: center;
-  gap: 20px;
 }
 
 .avatar {
   max-width: 50px;
-  cursor: pointer;
+  height: 50px;
 }
 .userContent {
   padding: 10px;

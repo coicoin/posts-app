@@ -26,6 +26,7 @@
   --border-light: #e5e7eb;
   --bg-color-primary: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
   --bg-color-secondary: #ffffff;
+  --bg-color-link: blanchedalmond;
 
   /* Dark theme */
   [data-theme="dark"] {
@@ -35,5 +36,6 @@
     --border-light: #374151;
     --bg-color-primary: linear-gradient(180deg, #111827 0%, #020617 100%);
     --bg-color-secondary: #020617;
+    --bg-color-link: rgb(57, 144, 178);
   }
 }

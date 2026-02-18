@@ -1,9 +1,37 @@
 .users {
-  padding: 24px 16px;
   max-width: clamp(400px, 60vw, 720px);
   text-align: start;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   min-height: 70vh;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.name {
+  padding: 10px 10px;
+  font-size: var(--font-size-base);
+}
+
+.user:hover {
+  background-color: var(--bg-color-link);
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
+.active {
+  background-color: var(--bg-color-link);
+  text-decoration: none;
 }

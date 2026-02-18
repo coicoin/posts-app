@@ -1,5 +1,4 @@
 import { User } from "@/entities/user/ui/user/User";
-import { UserTabs } from "@/widgets/user-tabs/UserTabs";
 import Loader from "@/shared/ui/loader/Loader";
 import { useParams } from "react-router";
 import React from "react";

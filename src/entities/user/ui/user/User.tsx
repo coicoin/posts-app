@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router";
 import styles from "./User.module.css";
 import type { TUser } from "@/entities/user/model/types";
 
@@ -7,10 +6,9 @@ type UserProps = {
 };
 
 export function User({ user }: UserProps) {
-  const navigate = useNavigate();
   return (
     <article className={styles.user}>
-      <img src="/icons/avatar.png" className={styles.avatar} onClick={() => navigate(`${user.id}`)}/>
+      <img src="/icons/avatar.png" className={styles.avatar} />
       <div className={styles.userContent}>
         <p className={styles.username}>{user.username}</p>
         <p className={styles.email}>

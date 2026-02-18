@@ -1,4 +1,26 @@
+.album {
+  border: 1px solid var(--border-light);
+}
+
+.album:hover {
+  transform: translateY(-0.4px);
+  background-color: var(--bg-color-link);
+}
+
 .title {
-  text-align: center;
   padding: 8px;
+}
+
+.completed {
+  color: green;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
+.active {
+  background-color: var(--bg-color-link);
+  text-decoration: none;
 }
