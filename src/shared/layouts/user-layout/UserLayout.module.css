@@ -1,0 +1,14 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-color-primary);
+  padding: 24px 16px;
+}
+
+.sidebar {
+  min-width: 200px;
+}
+
+.content {
+  padding: 0 10px;
+}
