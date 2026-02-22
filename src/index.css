@@ -1,4 +1,4 @@
-@import './shared/styles/constants.css';
+@import "./shared/styles/constants.css";
 
 * {
   box-sizing: border-box;
@@ -10,3 +10,17 @@ html {
   font-size: var(--font-size-default);
 }
 
+body {
+  font-size: var(--font-size);
+  animation: fadeIn 1s ease-out forwards;
+  will-change: opacity;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

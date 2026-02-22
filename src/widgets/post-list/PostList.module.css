@@ -16,8 +16,3 @@
   align-items: center;
   gap: 20px;
 }
-
-.lengthFilterTitle {
-  font-size: var(--font-size-base);
-  color: var(--text-color-primary);
-}

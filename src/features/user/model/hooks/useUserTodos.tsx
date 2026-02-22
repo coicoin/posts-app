@@ -3,7 +3,7 @@ import { todosMock } from "@/entities/todo/model/todosMock";
 import type { TTodo } from "@/entities/todo/model/types";
 import { useEffect, useState } from "react";
 
-function useTodos(userId: number) {
+function useUserTodos(userId: number) {
   const [todos, setTodos] = useState<TTodo[]>([]);
   const [isLoading, setLoading] = useState(true);
 
@@ -20,4 +20,4 @@ function useTodos(userId: number) {
   return { todos, isLoading };
 }
 
-export { useTodos };
+export { useUserTodos };

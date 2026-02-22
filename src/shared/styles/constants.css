@@ -19,8 +19,11 @@
   --font-h3-size: 1.9rem;
   --line-h3-height: 2.4rem;
 
+  --button-color: linear-gradient(135deg, #6366f1, #3b82f6);
+
   /* Light theme */
   --text-color-primary: #1f2937;
+  --text-color-active: #1f2937;
   --text-color-hover-primary: rgba(74, 74, 74, 0.9);
   --text-color-secondary: #5d636f;
   --border-light: #e5e7eb;
@@ -31,6 +34,7 @@
   /* Dark theme */
   [data-theme="dark"] {
     --text-color-primary: #f9fafb;
+    --text-color-active: #f9fafb;
     --text-color-hover-primary: rgba(232, 232, 232, 0.9);
     --text-color-secondary: #acb1ba;
     --border-light: #374151;

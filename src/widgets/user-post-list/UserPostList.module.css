@@ -21,3 +21,8 @@
   font-size: var(--font-size-base);
   color: var(--text-color-primary);
 }
+
+.heading {
+  color: var(--text-color-primary);
+  margin-bottom: 10px;
+}

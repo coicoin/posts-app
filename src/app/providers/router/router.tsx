@@ -10,12 +10,13 @@ import UsersPage from "@/pages/UsersPage";
 import UserTodosPage from "@/pages/UserTodosPage";
 import UserPostsPage from "@/pages/UserPostsPage";
 import UserAlbumsPhotosPage from "@/pages/UserAlbumsPhotosPage";
+import MainPage from "@/pages/MainPage";
 
 const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
-      { path: "/", element: <></> },
+      { path: "/", element: <MainPage/> },
       { path: "posts", element: <PostsPage /> },
       { path: "posts/:id", element: <PostCardPage /> },
       { path: "users", element: <UsersPage /> },

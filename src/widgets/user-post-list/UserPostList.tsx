@@ -23,7 +23,7 @@ function UserPostList({ loading, setLoading }: WithLoadingProps) {
 
   return (
     <React.Fragment>
-      <h1>Posts</h1>
+      <h1 className={styles.heading}>Posts</h1>
       <section className={styles.postList}>
         {posts.map((post: TPost) => (
           <PostCard key={post.id} post={post} />

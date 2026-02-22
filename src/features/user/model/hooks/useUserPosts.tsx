@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 function useUserPosts(
   userId: number,
-  { setLoading }: Omit<WithLoadingProps, "loading">,
+ { setLoading }: Omit<WithLoadingProps, "loading">,
 ) {
   const [posts, setPosts] = useState<TPost[]>([]);
 
@@ -20,7 +20,7 @@ function useUserPosts(
     return () => clearTimeout(timeout);
   }, [setLoading, userId]);
 
-  return { posts,  };
+  return { posts };
 }
 
 export { useUserPosts };

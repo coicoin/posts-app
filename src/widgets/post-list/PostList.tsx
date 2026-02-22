@@ -21,7 +21,6 @@ function PostList({ loading, setLoading }: WithLoadingProps) {
   return (
     <section className={styles.postList}>
       <div className={styles.lengthFilterWrapper}>
-        <p className={styles.lengthFilterTitle}>Filter by title length</p>
         <PostLengthFilter onChange={setLength} />
       </div>
       {loading 

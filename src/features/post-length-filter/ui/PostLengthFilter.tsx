@@ -1,27 +1,28 @@
+import { lexicon } from "@/shared/lexicon/lexicon";
 import styles from "./PostLengthFilter.module.css";
-import React, { useState } from "react";
 
 type PostLengthFilterProps = {
-  onChange: (length: number) => void;
+  onChange: (length: number | 0) => void;
 };
 
 function PostLengthFilter({ onChange }: PostLengthFilterProps) {
-  const [length, setLength] = useState<number>(0);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(event.target.value);
-    setLength(value);
-    onChange(value);
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = event.target.value;
+    onChange(value ? Number(value) : 0);
   };
 
   return (
-    <input
+    <select
       className={styles.lengthFilter}
-      type="number"
-      min="0"
-      value={length}
       onChange={handleChange}
-    />
+      defaultValue=""
+    >
+      <option value="">{lexicon.titles.filterByTitleLength}</option>
+      <option value="20">{lexicon.titles.filterByTitleOption(20)}</option>
+      <option value="50">{lexicon.titles.filterByTitleOption(50)}</option>
+      <option value="100">{lexicon.titles.filterByTitleOption(100)}</option>
+      <option value="200">{lexicon.titles.filterByTitleOption(200)}</option>
+    </select>
   );
 }
 

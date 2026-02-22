@@ -1,5 +1,5 @@
 import { UserTodo } from "@/entities/todo/ui/todo/UserTodo";
-import { useTodos } from "@/features/user/model/hooks/useUserTodos";
+import { useUserTodos } from "@/features/user/model/hooks/useUserTodos";
 import Loader from "@/shared/ui/loader/Loader";
 import { useParams } from "react-router";
 
@@ -10,7 +10,7 @@ function UserTodosPage() {
     throw new Error(`User id = ${id} not found in URL`);
   }
 
-  const { todos, isLoading } = useTodos(Number(id));
+  const { todos, isLoading } = useUserTodos(Number(id));
 
   if (isLoading) return <Loader />;
 

@@ -1,5 +1,5 @@
 import { UserAlbums } from "@/entities/album/ui/album/UserAlbums";
-import { useAlbum } from "@/features/user/model/hooks/useUserAlbum";
+import { useUserAlbum } from "@/features/user/model/hooks/useUserAlbum";
 import Loader from "@/shared/ui/loader/Loader";
 import { useParams } from "react-router";
 
@@ -10,7 +10,7 @@ function UserAlbumsPage() {
     throw new Error(`User id = ${id} not found in URL`);
   }
 
-  const { albums, isLoading } = useAlbum(Number(id));
+  const { albums, isLoading } = useUserAlbum(Number(id));
 
   if (isLoading) return <Loader />;
 

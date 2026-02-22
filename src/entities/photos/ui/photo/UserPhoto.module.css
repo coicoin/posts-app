@@ -2,8 +2,16 @@
   padding: 10px;
 }
 
+.heading {
+  color: var(--text-color-primary);
+  margin-bottom: 10px;
+}
+
 .title {
-  padding: 8px;
+  font-size: var(--font-h2-size);
+  line-height: var(--line-h2-height);
+  color: var(--text-color-primary);
+  margin-bottom: 8px;
 }
 
 .picture {

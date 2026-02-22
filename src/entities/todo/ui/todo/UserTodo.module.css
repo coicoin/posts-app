@@ -2,9 +2,17 @@
   border: 1px solid var(--border-light);
 }
 
+.heading {
+  color: var(--text-color-primary);
+  margin-bottom: 10px;
+}
+
 .title {
+  font-size: var(--font-h2-size);
+  line-height: var(--line-h2-height);
+  color: var(--text-color-primary);
+  margin-bottom: 8px;
   padding: 8px;
-  border: 1px solid var(--border-light);
 }
 
 .completed {
