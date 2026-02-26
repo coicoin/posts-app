@@ -1,5 +1,6 @@
 import type { TPhoto } from "@/entities/photos/model/types";
 import styles from "./UserPhoto.module.css";
+import { lexicon } from "@/shared/lexicon/lexicon";
 
 type UserPhotosProps = {
   photos: TPhoto[];
@@ -8,7 +9,7 @@ type UserPhotosProps = {
 export function UserPhotos({ photos }: UserPhotosProps) {
   return (
     <>
-      <h1>Photo</h1>
+      <h1 className={styles.heading}>{lexicon.titles.photo}</h1>
       {photos.map((photo) => (
         <article key={photo.id} className={styles.photoContent}>
           <p className={styles.title}>{photo.title}</p>

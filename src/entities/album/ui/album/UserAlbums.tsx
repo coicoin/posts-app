@@ -1,6 +1,7 @@
 import type { TAlbum } from "@/entities/album/model/types";
 import styles from "./UserAlbum.module.css";
 import { NavLink } from "react-router";
+import { lexicon } from "@/shared/lexicon/lexicon";
 
 type UserAlbumsProps = {
   albums: TAlbum[];
@@ -9,7 +10,7 @@ type UserAlbumsProps = {
 export function UserAlbums({ albums }: UserAlbumsProps) {
   return (
     <>
-      <h1>Albums</h1>
+      <h1 className={styles.heading}>{lexicon.titles.albums}</h1>
       {albums.map((album) => (
         <NavLink
           key={album.id}

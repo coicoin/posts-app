@@ -2,29 +2,36 @@ import { User } from "@/entities/user/ui/user/User";
 import Loader from "@/shared/ui/loader/Loader";
 import { useParams } from "react-router";
 import React from "react";
-import { useUser } from "@/features/user/model/hooks/useUser";
+import { useGetUserByIdQuery } from "@/entities/user/api/usersApi";
+import { lexicon } from "@/shared/lexicon/lexicon";
+import { skipToken } from "@reduxjs/toolkit/query";
 
 function UserPage() {
   const { id } = useParams();
-  if (!id) {
-    //TODO: move to constant
-    throw new Error(`User id = ${id} not found in URL`);
-  }
+  const userId = id ? Number(id) : undefined;
 
-  const { user, isLoading } = useUser(Number(id));
+  const {
+    data: user,
+    isLoading,
+    error,
+  } = useGetUserByIdQuery(userId ?? skipToken);
+
+  if (!userId) {
+    return <div>{lexicon.errors.userIdNotFound(id)}</div>;
+  }
 
   if (isLoading) return <Loader />;
 
   if (!user) {
-    //TODO: move to constant
-    throw new Error(`User id = ${id} not found`);
+    return <div>{lexicon.errors.userNotFoundById(id)}</div>;
   }
 
   return (
     <React.Fragment>
-      <User user={user} />
+      {user && <User user={user} />}
+      {error && <div>{lexicon.errors.errorLoadingUser}</div>}
     </React.Fragment>
   );
 }
 
-export default UserPage;
+export { UserPage };

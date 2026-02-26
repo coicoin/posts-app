@@ -6,6 +6,12 @@ const MainNavigation = () => {
   return (
     <nav className={styles.nav}>
       <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? styles.active : undefined)}
+      >
+        {lexicon.buttons.main}
+      </NavLink>
+      <NavLink
         to="/posts"
         className={({ isActive }) => (isActive ? styles.active : undefined)}
       >

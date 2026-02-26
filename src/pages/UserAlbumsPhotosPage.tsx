@@ -1,5 +1,5 @@
 import { UserPhotos } from "@/entities/photos/ui/photo/UserPhoto";
-import { usePhotos } from "@/features/album/model/hooks/useUserPhotos";
+import { usePhotos } from "@/features/album/model/hooks/usePhotos";
 import Loader from "@/shared/ui/loader/Loader";
 import { useParams } from "react-router";
 
@@ -21,4 +21,4 @@ function UserAlbumsPhotosPage() {
   return <UserPhotos photos={photos} />;
 }
 
-export default UserAlbumsPhotosPage;
+export { UserAlbumsPhotosPage };

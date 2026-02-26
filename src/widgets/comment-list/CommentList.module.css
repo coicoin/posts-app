@@ -15,16 +15,16 @@
   opacity: 0.7;
 }
 
+.commentsButton .commentsArrow.open {
+  transform: rotate(90deg);
+}
+
 .commentsCount {
   padding-right: 8px;
 }
 
 .commentsArrow {
   font-size: var(--font-size);
-}
-
-.showComments .commentsArrow.open {
-  transform: rotate(90deg);
 }
 
 .commentList {

@@ -20,4 +20,4 @@ const UserLayout = () => {
   );
 };
 
-export default UserLayout;
+export { UserLayout };

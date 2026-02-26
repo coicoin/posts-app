@@ -8,7 +8,7 @@ type UserTodosProps = {
 export function UserTodo({ todos }: UserTodosProps) {
   return (
     <>
-      <h1>Tasks</h1>
+      <h1 className={styles.heading}>Tasks</h1>
       {todos.map((todo) => (
         <article key={todo.id} className={styles.todo}>
           <p className={styles.title}>{todo.title}</p>

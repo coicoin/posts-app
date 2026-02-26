@@ -21,4 +21,4 @@ function PostCardPage() {
 
   return <PostCard post={post} />;
 }
-export default PostCardPage;
+export { PostCardPage };

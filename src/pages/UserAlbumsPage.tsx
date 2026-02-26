@@ -1,24 +1,33 @@
+import { useGetAlbumsByUserIdQuery } from "@/entities/album/api/albumsApi";
 import { UserAlbums } from "@/entities/album/ui/album/UserAlbums";
-import { useAlbum } from "@/features/user/model/hooks/useUserAlbum";
+import { lexicon } from "@/shared/lexicon/lexicon";
 import Loader from "@/shared/ui/loader/Loader";
+import { skipToken } from "@reduxjs/toolkit/query";
 import { useParams } from "react-router";
 
 function UserAlbumsPage() {
   const { id } = useParams();
-  if (!id) {
-    //TODO: move to constant
-    throw new Error(`User id = ${id} not found in URL`);
+  const userId = id ? Number(id) : undefined;
+
+  const {
+    data: albums,
+    isLoading,
+    error,
+  } = useGetAlbumsByUserIdQuery(userId ?? skipToken);
+
+  if (!userId) {
+    return <div>{lexicon.errors.userIdNotFound(id)}</div>;
   }
-
-  const { albums, isLoading } = useAlbum(Number(id));
-
   if (isLoading) return <Loader />;
 
   if (!albums) {
-    //TODO: move to constant
-    throw new Error(`Albums with userId = ${id} not found`);
+    return <div>{lexicon.errors.albumsNotFoundByUserId(id)}</div>;
+  }
+
+  if (error) {
+    return <div>{lexicon.errors.errorLoadingTodos}</div>;
   }
 
   return <UserAlbums albums={albums} />;
 }
-export default UserAlbumsPage;
+export { UserAlbumsPage };
