@@ -1,8 +1,31 @@
-const themes = {
+export const themes = {
   dark: "dark",
   light: "light",
 } as const;
 
-const themeKey = "theme";
+export const themeKey = "theme";
 
-export { themes, themeKey };
+export const tags = {
+  post: "Post",
+  comment: "Comment",
+  user: "User",
+  album: "Album",
+  todo: "Todo",
+};
+
+export const types = {
+  post: "Post",
+  comment: "Comment",
+  user: "User",
+  album: "Album",
+  todo: "Todo",
+};
+
+export const METHOD = {
+  POST: "POST",
+  PUT: "PUT",
+  GET: "GET",
+  DELETE: "DELETE",
+};
+
+export const LIST = "LIST";

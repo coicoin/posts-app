@@ -1,22 +1,22 @@
 import { createBrowserRouter } from "react-router";
-import MainLayout from "@/shared/layouts/main-layout/MainLayout";
-import PostsPage from "@/pages/PostsPage";
-import PostCardPage from "@/pages/PostCardPage";
-import UserPage from "@/pages/UserPage";
-import UserAlbumsPage from "@/pages/UserAlbumsPage";
-import NotFoundPage from "@/pages/NotFoundPage";
-import UserLayout from "@/shared/layouts/user-layout/UserLayout";
-import UsersPage from "@/pages/UsersPage";
-import UserTodosPage from "@/pages/UserTodosPage";
-import UserPostsPage from "@/pages/UserPostsPage";
-import UserAlbumsPhotosPage from "@/pages/UserAlbumsPhotosPage";
-import MainPage from "@/pages/MainPage";
+import { MainLayout } from "@/shared/layouts/main-layout/MainLayout";
+import { PostsPage } from "@/pages/PostsPage";
+import { PostCardPage } from "@/pages/PostCardPage";
+import { UserPage } from "@/pages/UserPage";
+import { UserAlbumsPage } from "@/pages/UserAlbumsPage";
+import { NotFoundPage } from "@/pages/NotFoundPage";
+import { UserLayout } from "@/shared/layouts/user-layout/UserLayout";
+import { UsersPage } from "@/pages/UsersPage";
+import { UserTodosPage } from "@/pages/UserTodosPage";
+import { UserPostsPage } from "@/pages/UserPostsPage";
+import { UserAlbumsPhotosPage } from "@/pages/UserAlbumsPhotosPage";
+import { MainPage } from "@/pages/MainPage";
 
 const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
-      { path: "/", element: <MainPage/> },
+      { path: "/", element: <MainPage /> },
       { path: "posts", element: <PostsPage /> },
       { path: "posts/:id", element: <PostCardPage /> },
       { path: "users", element: <UsersPage /> },
@@ -38,4 +38,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+export { router };

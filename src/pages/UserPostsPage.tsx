@@ -4,4 +4,4 @@ function UserPostsPage() {
   return <UserPostList />;
 }
 
-export default UserPostsPage;
+export { UserPostsPage };

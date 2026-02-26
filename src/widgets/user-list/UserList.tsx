@@ -1,20 +1,24 @@
 import styles from "./UserList.module.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import type { TUser } from "@/entities/user/model/types";
-import { usersMock } from "@/entities/user/model/usersMock";
 import { NavLink } from "react-router";
+import { useDispatch } from "react-redux";
+import { useGetUsersQuery } from "@/entities/user/api/usersApi";
+import { setUsers } from "@/entities/user/model/slice/userSlice";
+import Loader from "@/shared/ui/loader/Loader";
+import { lexicon } from "@/shared/lexicon/lexicon";
 
 export function UserList() {
-  const [users, setUsers] = useState<TUser[]>([]);
+  const dispatch = useDispatch();
+  const { data: users = [], isLoading, error } = useGetUsersQuery();
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const data: TUser[] = usersMock;
-      setUsers(data);
-    }, 1000);
+    dispatch(setUsers(users));
+  }, [dispatch, users]);
 
-    return () => clearTimeout(timeout);
-  }, []);
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className={styles.users}>
@@ -22,12 +26,9 @@ export function UserList() {
         <NavLink
           key={user.id}
           to={`/users/${user.id}`}
-          className={
-            ({ isActive }) => (
-              isActive 
-                ? `${styles.active} ${styles.link}`
-                : styles.link
-              )}
+          className={({ isActive }) =>
+            isActive ? `${styles.active} ${styles.link}` : styles.link
+          }
           end={false}
         >
           <div className={styles.user} key={user.id}>
@@ -36,6 +37,7 @@ export function UserList() {
           </div>
         </NavLink>
       ))}
+      {error && <div>{lexicon.errors.errorLoadingUsers}</div>}
     </div>
   );
 }

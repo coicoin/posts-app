@@ -1,7 +1,7 @@
-import PostCardList from "@/widgets/post-list/PostList";
+import { PostList } from "@/widgets/post-list/PostList";
 
-function PostPage() {
-  return <PostCardList />;
+function PostsPage() {
+  return <PostList />;
 }
 
-export default PostPage;
+export { PostsPage };

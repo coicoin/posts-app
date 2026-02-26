@@ -1,24 +1,34 @@
+import { useGetTodosByUserIdQuery } from "@/entities/todo/api/todosApi";
 import { UserTodo } from "@/entities/todo/ui/todo/UserTodo";
-import { useUserTodos } from "@/features/user/model/hooks/useUserTodos";
+import { lexicon } from "@/shared/lexicon/lexicon";
 import Loader from "@/shared/ui/loader/Loader";
+import { skipToken } from "@reduxjs/toolkit/query";
 import { useParams } from "react-router";
 
 function UserTodosPage() {
   const { id } = useParams();
-  if (!id) {
-    //TODO: move to constant
-    throw new Error(`User id = ${id} not found in URL`);
-  }
+  const userId = id ? Number(id) : undefined;
 
-  const { todos, isLoading } = useUserTodos(Number(id));
+  const {
+    data: todos,
+    isLoading,
+    error,
+  } = useGetTodosByUserIdQuery(userId ?? skipToken);
+
+  if (!userId) {
+    return <div>{lexicon.errors.userIdNotFound(id)}</div>;
+  }
 
   if (isLoading) return <Loader />;
 
   if (!todos) {
-    //TODO: move to constant
-    throw new Error(`Todos with userId = ${id} not found`);
+    return <div>{lexicon.errors.todosNotFoundByUserId(id)}</div>;
+  }
+
+  if (error) {
+    return <div>{lexicon.errors.errorLoadingTodos}</div>;
   }
 
   return <UserTodo todos={todos} />;
 }
-export default UserTodosPage;
+export { UserTodosPage };

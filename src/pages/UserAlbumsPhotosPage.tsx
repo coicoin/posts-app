@@ -21,4 +21,4 @@ function UserAlbumsPhotosPage() {
   return <UserPhotos photos={photos} />;
 }
 
-export default UserAlbumsPhotosPage;
+export { UserAlbumsPhotosPage };
