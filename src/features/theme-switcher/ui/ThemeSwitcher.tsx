@@ -1,8 +1,8 @@
 import styles from "./ThemeSwitcher.module.css";
 import { SunIcon } from "@heroicons/react/24/solid";
 import { MoonIcon } from "@heroicons/react/24/solid";
-import useTheme from "@/shared/lib/theme/useTheme";
-import Button from "@/shared/ui/button/Button";
+import { useTheme } from "@/shared/lib/theme/useTheme";
+import { Button } from "@/shared/ui/button/Button";
 import { themeKey, themes } from "@/shared/constants/constants";
 import { lexicon } from "@/shared/lexicon/lexicon";
 import { toggleTheme } from "@/shared/lib/theme/handleTheme";
@@ -28,4 +28,4 @@ function ThemeSwitcher() {
   );
 }
 
-export default ThemeSwitcher;
+export { ThemeSwitcher };

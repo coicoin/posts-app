@@ -18,4 +18,4 @@ function Loader({ size = 40 }: LoaderProps) {
   );
 }
 
-export default Loader;
+export { Loader };

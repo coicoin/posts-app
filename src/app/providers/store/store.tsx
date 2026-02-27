@@ -7,6 +7,7 @@ import { commentsApi } from "@/entities/comments/api/commentsApi";
 import { albumsApi } from "@/entities/album/api/albumsApi";
 import { todosApi } from "@/entities/todo/api/todosApi";
 import { usersApi } from "@/entities/user/api/usersApi";
+import { photosApi } from "@/entities/photos/api/photosApi";
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     [albumsApi.reducerPath]: albumsApi.reducer,
     [todosApi.reducerPath]: todosApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
+    [photosApi.reducerPath]: photosApi.reducer,
     //Slices
     post: postReducer,
     user: userReducer,
@@ -27,6 +29,7 @@ export const store = configureStore({
       .concat(commentsApi.middleware)
       .concat(albumsApi.middleware)
       .concat(todosApi.middleware)
+      .concat(photosApi.middleware)
       .concat(usersApi.middleware),
 
   devTools: import.meta.env.MODE !== "production",

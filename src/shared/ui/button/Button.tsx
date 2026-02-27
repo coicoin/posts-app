@@ -1,10 +1,10 @@
-import type { ReactNode, ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, MouseEventHandler, PropsWithChildren } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-function Button({ children, className, ...props }: ButtonProps) {
+function Button({ children, className, ...props }: PropsWithChildren<ButtonProps>) {
   return (
     <button className={className} {...props}>
       {children}
@@ -12,4 +12,4 @@ function Button({ children, className, ...props }: ButtonProps) {
   );
 }
 
-export default Button;
+export { Button };

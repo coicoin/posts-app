@@ -10,6 +10,7 @@ export const tags = {
   comment: "Comment",
   user: "User",
   album: "Album",
+  photo: "Photo",
   todo: "Todo",
 };
 
@@ -18,6 +19,7 @@ export const types = {
   comment: "Comment",
   user: "User",
   album: "Album",
+  photo: "Photo",
   todo: "Todo",
 };
 
@@ -29,3 +31,5 @@ export const METHOD = {
 };
 
 export const LIST = "LIST";
+
+export const ID = "id";

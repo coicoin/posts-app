@@ -1,7 +1,7 @@
-import { lexicon } from "@/shared/lexicon/lexicon";
 import styles from "./About.module.css";
-import Button from "@/shared/ui/button/Button";
-import Modal from "@/shared/ui/modal/Modal";
+import { lexicon } from "@/shared/lexicon/lexicon";
+import { Button } from "@/shared/ui/button/Button";
+import { Modal } from "@/shared/ui/modal/Modal";
 
 type AboutProps = {
   isOpen: boolean;
@@ -26,4 +26,4 @@ function About({ isOpen, onClose }: AboutProps) {
   );
 }
 
-export default About;
+export { About };

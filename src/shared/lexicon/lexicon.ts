@@ -18,9 +18,13 @@ export const lexicon = {
     filterByTitleOption: (length: number) => `> ${length} символов`,
     postsCount: (postsCount: number, filteredPosts: number) =>
       `Кол-во постов: ${filteredPosts} из ${postsCount}`,
-    photo: "Photo",
-    albums: "Albums",
-    posts: "Posts",
+    photo: "Фото",
+    albums: "Альбомы",
+    posts: "Посты",
+    todos: "Задачи",
+    comments: "Комментарии",
+    noComments: "Нет комментариев",
+    notFound404: "Not Found 404",
     welcome: "Привет, гость 👋",
     mainDescription:
       "Добро пожаловать в блог. Здесь ты найдёшь интересные статьи и материалы.",
@@ -35,13 +39,18 @@ export const lexicon = {
     errorLoadingUsers: "Error loading users",
     errorLoadingUser: "Error loading user",
     errorLoadingTodos: "Error loading todos",
-    userIdNotFound: (id: string | undefined) =>
-      `User id = ${id} not found in URL`,
-    userNotFoundById: (id: string | undefined) =>
+    paramNotFound: (id: number | undefined) => `Param = ${id} not found in URL`,
+    userNotFoundById: (id: number | undefined) =>
       `User with id = ${id} not found`,
-    todosNotFoundByUserId: (userId: string | undefined) =>
-      `Todos for user with ${userId} not found`,
-    albumsNotFoundByUserId: (userId: string | undefined) =>
-      `Albums for user with ${userId} not found`,
+    todosNotFoundByUserId: (userId: number | undefined) =>
+      `Todos for user with id ${userId} not found`,
+    albumsNotFoundByUserId: (userId: number | undefined) =>
+      `Albums for user with id ${userId} not found`,
+    postNotFoundById: (postId: number | undefined) =>
+      `Post with id = ${postId} not found`,
+    postNotFoundByUserId: (userId: number | undefined) =>
+      `Posts for user with id ${userId} not found`,
+    photosNotFoundByPhotosId: (albumId: number | undefined) =>
+      `Photos with albumId = ${albumId} not found`,
   },
 };

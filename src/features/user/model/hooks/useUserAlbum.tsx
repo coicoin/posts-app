@@ -1,7 +1,9 @@
 import { albumsMock } from "@/entities/album/model/albumsMock";
 import type { TAlbum } from "@/entities/album/model/types";
 import { useEffect, useState } from "react";
-
+/**
+ * @deprecated
+ */
 function useUserAlbum(userId: number) {
   const [albums, setAlbums] = useState<TAlbum[]>([]);
   const [isLoading, setLoading] = useState(true);

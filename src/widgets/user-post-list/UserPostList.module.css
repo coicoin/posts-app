@@ -9,19 +9,6 @@
   min-height: 70vh;
 }
 
-.lengthFilterWrapper {
-  padding: 5px;
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.lengthFilterTitle {
-  font-size: var(--font-size-base);
-  color: var(--text-color-primary);
-}
-
 .heading {
   color: var(--text-color-primary);
   margin-bottom: 10px;
