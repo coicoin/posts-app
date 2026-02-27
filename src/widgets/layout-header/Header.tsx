@@ -1,7 +1,7 @@
-import ThemeSwitcher from "@/features/theme-switcher/ui/ThemeSwitcher";
 import styles from "./Header.module.css";
-import About from "@/widgets/about/About";
-import Button from "@/shared/ui/button/Button";
+import { ThemeSwitcher } from "@/features/theme-switcher/ui/ThemeSwitcher";
+import { About } from "@/widgets/about/About";
+import { Button } from "@/shared/ui/button/Button";
 import { lexicon } from "@/shared/lexicon/lexicon";
 import { useState } from "react";
 
@@ -20,4 +20,4 @@ function Header() {
   );
 }
 
-export default Header;
+export { Header };

@@ -9,7 +9,7 @@ import { UserLayout } from "@/shared/layouts/user-layout/UserLayout";
 import { UsersPage } from "@/pages/UsersPage";
 import { UserTodosPage } from "@/pages/UserTodosPage";
 import { UserPostsPage } from "@/pages/UserPostsPage";
-import { UserAlbumsPhotosPage } from "@/pages/UserAlbumsPhotosPage";
+import { UserPhotosPage } from "@/pages/UserPhotosPage";
 import { MainPage } from "@/pages/MainPage";
 
 const router = createBrowserRouter([
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <UserPage /> },
           { path: "albums", element: <UserAlbumsPage /> },
-          { path: "albums/:id/photos", element: <UserAlbumsPhotosPage /> },
+          { path: "albums/:id/photos", element: <UserPhotosPage /> },
           { path: "todos", element: <UserTodosPage /> },
           { path: "posts", element: <UserPostsPage /> },
           { path: "*", element: <NotFoundPage /> },

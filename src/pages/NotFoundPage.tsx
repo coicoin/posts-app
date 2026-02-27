@@ -1,5 +1,7 @@
+import { lexicon } from "@/shared/lexicon/lexicon";
+
 function NotFoundPage() {
-  return <h1>Not Found 404</h1>;
+  return <h1>{lexicon.titles.notFound404}</h1>;
 }
 
 export { NotFoundPage };

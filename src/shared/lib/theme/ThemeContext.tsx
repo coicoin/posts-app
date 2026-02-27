@@ -12,4 +12,4 @@ const ThemeContext = React.createContext<ThemeContextType>({
   setTheme: () => {},
 });
 
-export default ThemeContext;
+export { ThemeContext };

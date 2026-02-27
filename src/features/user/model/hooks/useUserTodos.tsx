@@ -2,7 +2,9 @@
 import { todosMock } from "@/entities/todo/model/todosMock";
 import type { TTodo } from "@/entities/todo/model/types";
 import { useEffect, useState } from "react";
-
+/**
+ * @deprecated
+ */
 function useUserTodos(userId: number) {
   const [todos, setTodos] = useState<TTodo[]>([]);
   const [isLoading, setLoading] = useState(true);

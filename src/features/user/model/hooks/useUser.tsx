@@ -1,7 +1,9 @@
 import type { TUser } from "@/entities/user/model/types";
 import { usersMock } from "@/entities/user/model/usersMock";
 import { useEffect, useState } from "react";
-
+/**
+ * @deprecated
+ */
 function useUser(id: number) {
   const [user, setUser] = useState<TUser>();
   const [isLoading, setLoading] = useState(true);

@@ -7,21 +7,12 @@
   background-color: var(--bg-color-link);
 }
 
-.heading {
-  color: var(--text-color-primary);
-  margin-bottom: 10px;
-}
-
 .title {
   font-size: var(--font-h2-size);
   line-height: var(--line-h2-height);
   color: var(--text-color-primary);
   margin-bottom: 8px;
   padding: 8px;
-}
-
-.completed {
-  color: green;
 }
 
 .link {

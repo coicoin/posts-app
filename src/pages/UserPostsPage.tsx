@@ -1,4 +1,4 @@
-import UserPostList from "@/widgets/user-post-list/UserPostList";
+import { UserPostList } from "@/widgets/user-post-list/UserPostList";
 
 function UserPostsPage() {
   return <UserPostList />;

@@ -1,6 +1,6 @@
 import styles from "./CommentList.module.css";
 import React, { useCallback, useState } from "react";
-import Loader from "@/shared/ui/loader/Loader";
+import { Loader } from "@/shared/ui/loader/Loader";
 import { Comment } from "@/entities/comments/ui/comment/Comment";
 import type { TComment } from "@/entities/comments/model/types";
 import {
@@ -8,6 +8,7 @@ import {
   useGetCommentsByPostIdQuery,
 } from "@/entities/comments/api/commentsApi";
 import { lexicon } from "@/shared/lexicon/lexicon";
+import { ItemList } from "@/shared/ui/item-list/ItemList";
 
 type CommentListProps = {
   postId: number;
@@ -31,7 +32,8 @@ function CommentList({ postId }: CommentListProps) {
     <React.Fragment>
       <div className={styles.commentsButton} onClick={handleClick}>
         <p className={styles.commentsTitle}>
-          <span className={styles.commentsCount}>{commentsCount}</span> Comments
+          <span className={styles.commentsCount}>{commentsCount}</span>
+          {lexicon.titles.comments}
         </p>
         <span
           className={
@@ -45,13 +47,16 @@ function CommentList({ postId }: CommentListProps) {
       </div>
       {isOpen && !isLoading && comments.length > 0 && (
         <div className={styles.commentList}>
-          {comments.map((comment: TComment) => (
-            <Comment key={comment.id} comment={comment} />
-          ))}
+          <ItemList
+            items={comments}
+            renderItem={(comment: TComment) => (
+              <Comment key={comment.id} comment={comment} />
+            )}
+          />
         </div>
       )}
       {isOpen && !isLoading && comments.length == 0 && (
-        <div className={styles.commentList}>No comments</div>
+        <div className={styles.commentList}>{lexicon.titles.noComments}</div>
       )}
       {error && <div>{lexicon.errors.errorLoadingComments}</div>}
     </React.Fragment>

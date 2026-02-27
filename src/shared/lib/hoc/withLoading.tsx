@@ -17,4 +17,4 @@ function withLoading<T extends object>(WrappedComponent: ComponentType<T & WithL
   return memo(WithLoading);
 }
 
-export default withLoading;
+export { withLoading };
