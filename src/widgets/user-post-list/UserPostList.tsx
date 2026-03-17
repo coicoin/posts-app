@@ -1,37 +1,46 @@
+import styles from "./UserPostList.module.css";
+import React from "react";
 import type { TPost } from "@/entities/post/model/types";
 import { PostCard } from "@/entities/post/ui/post/PostCard";
-import styles from "./UserPostList.module.css";
-import withLoading, {
-  type WithLoadingProps,
-} from "@/shared/lib/hoc/withLoading";
-import Loader from "@/shared/ui/loader/Loader";
-import { useParams } from "react-router";
-import { useUserPosts } from "@/features/user/model/hooks/useUserPosts";
-import React from "react";
+import { Loader } from "@/shared/ui/loader/Loader";
+import { ItemList } from "@/shared/ui/item-list/ItemList";
+import { useGetPostsByUserIdQuery } from "@/entities/post/api/postsApi";
+import { skipToken } from "@reduxjs/toolkit/query";
+import { lexicon } from "@/shared/lexicon/lexicon";
+import { useNumericParam } from "@/shared/hooks/useNumericParam";
+import { ID } from "@/shared/constants/constants";
 
-function UserPostList({ loading, setLoading }: WithLoadingProps) {
-  const { id } = useParams();
-  if (!id) throw new Error(`User id = ${id} not found in URL`);
+function UserPostList() {
+  const userId: number | undefined = useNumericParam(ID);
 
-  const { posts } = useUserPosts(Number(id), { setLoading });
+  const {
+    data: posts,
+    isLoading,
+    error,
+  } = useGetPostsByUserIdQuery(userId ?? skipToken);
 
-  if (loading) return <Loader />;
+  if (!userId) {
+    return <div>{lexicon.errors.paramNotFound(userId)}</div>;
+  }
+
+  if (isLoading) return <Loader />;
 
   if (!posts) {
-    throw new Error(`Posts with userId = ${id} not found`);
+    return <div>{lexicon.errors.postNotFoundByUserId(userId)}</div>;
   }
 
   return (
     <React.Fragment>
-      <h1 className={styles.heading}>Posts</h1>
+      <h1 className={styles.heading}>{lexicon.titles.posts}</h1>
       <section className={styles.postList}>
-        {posts.map((post: TPost) => (
-          <PostCard key={post.id} post={post} />
-        ))}
+        <ItemList
+          items={posts}
+          renderItem={(post: TPost) => <PostCard key={post.id} post={post} />}
+        />
       </section>
+      {error && <div>{lexicon.errors.errorLoadingUser}</div>}
     </React.Fragment>
   );
 }
 
-const UserPostListWithLoading = withLoading(UserPostList);
-export default UserPostListWithLoading;
+export { UserPostList };

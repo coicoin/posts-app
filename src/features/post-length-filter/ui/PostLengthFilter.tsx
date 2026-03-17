@@ -18,12 +18,12 @@ function PostLengthFilter({ onChange }: PostLengthFilterProps) {
       defaultValue=""
     >
       <option value="">{lexicon.titles.filterByTitleLength}</option>
+      <option value="10">{lexicon.titles.filterByTitleOption(10)}</option>
       <option value="20">{lexicon.titles.filterByTitleOption(20)}</option>
       <option value="50">{lexicon.titles.filterByTitleOption(50)}</option>
       <option value="100">{lexicon.titles.filterByTitleOption(100)}</option>
-      <option value="200">{lexicon.titles.filterByTitleOption(200)}</option>
     </select>
   );
 }
 
-export default PostLengthFilter;
+export { PostLengthFilter };

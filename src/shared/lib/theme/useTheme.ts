@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import ThemeContext from "./ThemeContext";
+import { ThemeContext } from "./ThemeContext";
 import { applyTheme } from "./handleTheme";
 
 function useTheme() {
@@ -11,4 +11,4 @@ function useTheme() {
   return theme;
 }
 
-export default useTheme;
+export { useTheme };

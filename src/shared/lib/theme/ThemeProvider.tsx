@@ -1,19 +1,13 @@
 import type { Theme } from "@/shared/types/types";
-import ThemeContext from "./ThemeContext";
-import { useState, type ReactNode } from "react";
+import { ThemeContext } from "./ThemeContext";
+import { useState, type PropsWithChildren } from "react";
 import { themeKey, themes } from "@/shared/constants/constants";
 import { applyTheme } from "./handleTheme";
 
-interface ThemeProviderProps {
-  children: ReactNode;
-}
-
-function ThemeProvider({ children }: ThemeProviderProps) {
+function ThemeProvider({ children }: PropsWithChildren) {
   const currentTheme = localStorage.getItem(themeKey) ?? themes.light;
 
-  const [theme, setTheme] = useState<Theme>(
-    applyTheme(currentTheme)
-  );
+  const [theme, setTheme] = useState<Theme>(applyTheme(currentTheme));
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -22,4 +16,4 @@ function ThemeProvider({ children }: ThemeProviderProps) {
   );
 }
 
-export default ThemeProvider;
+export { ThemeProvider };

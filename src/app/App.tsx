@@ -1,4 +1,4 @@
-import ThemeProvider from "@/shared/lib/theme/ThemeProvider";
+import { ThemeProvider } from "@/shared/lib/theme/ThemeProvider";
 import { RouterProvider } from "react-router";
 import { router } from "./providers/router/router";
 
@@ -10,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };

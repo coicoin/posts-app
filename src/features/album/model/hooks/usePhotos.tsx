@@ -2,7 +2,9 @@ import { photosMock } from "@/entities/photos/model/photosMock";
 import type { TPhoto } from "@/entities/photos/model/types";
 import { useData } from "@/shared/hooks/useData";
 import { useCallback } from "react";
-
+/**
+ * @deprecated
+ */
 function usePhotos(albumId: number) {
   const fetchPhotos = useCallback(
     () => photosMock.filter((todos) => todos.albumId === albumId),

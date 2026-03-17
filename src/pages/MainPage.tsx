@@ -1,4 +1,4 @@
-import Main from "@/widgets/main/Main";
+import { Main } from "@/widgets/main/Main";
 
 function MainPage() {
   return <Main />;

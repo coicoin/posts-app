@@ -2,11 +2,6 @@
   padding: 10px;
 }
 
-.heading {
-  color: var(--text-color-primary);
-  margin-bottom: 10px;
-}
-
 .title {
   font-size: var(--font-h2-size);
   line-height: var(--line-h2-height);

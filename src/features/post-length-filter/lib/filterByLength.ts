@@ -4,4 +4,4 @@ function filterByLength(posts: TPost[], minLength: number) {
   return posts.filter((post) => post.title.length >= minLength);
 }
 
-export default filterByLength;
+export { filterByLength };
